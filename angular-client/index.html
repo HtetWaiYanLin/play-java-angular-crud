@@ -1,0 +1,62 @@
+<!doctype html>
+<html ng-app="personsApp">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body ng-controller="personsController" ng-init="load()">
+<div class="page-header">
+    <h1>Persons</h1>
+</div>
+
+<div class="panel">
+    <div class="form-inline">
+        <div class="form-group">
+            <div class="col-md-6">
+                <input class="form-control" ng-model="firstName" placeholder="First name"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <input  class="form-control" ng-model="lastName" placeholder="Last name"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <input  class="form-control" ng-model="age" placeholder="Age"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-6">
+                <button class="btn btn-default" ng-click="addPerson(firstName, lastName, age)">{{action}} person</button>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Age</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="person in persons">
+            <td>{{person.firstName}}</td>
+            <td>{{person.lastName}}</td>
+            <td>{{person.age}}</td>
+            <td><a href="#" ng-click="edit(person.id)">Edit</a></td>
+            <td><a href="#" ng-click="delete(person.id)">Delete</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="javascript/angular.js"></script>
+<script src="javascript/angular-sanitize.js"></script>
+<script src="persons.js"></script>
+</body>
+</html>

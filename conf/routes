@@ -1,0 +1,15 @@
+GET     /person                     controllers.PersonController.getPersons
+
++ nocsrf
+POST    /person                     controllers.PersonController.createPerson
+
++ nocsrf
+OPTIONS    /person                  controllers.PersonController.onOptions
+
++ nocsrf
+OPTIONS    /person/:id              controllers.PersonController.onOptionsWithId(id: Integer)
+
+DELETE     /person/:id              controllers.PersonController.deletePerson(id: Integer)
+
++ nocsrf
+PUT    /person                      controllers.PersonController.updatePerson
